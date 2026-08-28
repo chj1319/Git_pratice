@@ -12,3 +12,37 @@
 > **주행 및 제동 조건**  
 > 배달 로봇의 주행 속도는 보도 주행 규정에 맞춰 $v = 1.5\text{ m/s}$, 감속도 $a = 2\text{ m/s}^2$ 로 가정
 > 이 값으로 제동 거리는 $v^2 / 2a = 0.56\text{ m}$ 이고, **100 ms 반응 지연마다 0.15 m 씩 더 진행**
+
+
+## 2. 원격 접속(SSH)과 센서 장치 경로 고정
+
+1. localhost로 접속
+
+```console
+pa33@pa33-Legion-Pro-5-16IAX10:~$ ssh pa33@localhost
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.8.0-138-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+189 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+143 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+New release '24.04.4 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Tue Aug 25 14:14:47 2026 from 127.0.0.1
+pa33@pa33-Legion-Pro-5-16IAX10:~$ who
+pa33     tty2         2026-08-25 00:09 (tty2)
+pa33     pts/3        2026-08-25 14:14 (127.0.0.1)
+pa33     pts/4        2026-08-25 14:15 (127.0.0.1)
+pa33@pa33-Legion-Pro-5-16IAX10:~$ echo $SSH_CONNECTION
+127.0.0.1 44232 127.0.0.1 22
+
+```
