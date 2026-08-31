@@ -58,3 +58,37 @@
 | 바퀴 엔코더 | 1ms마다 카운터를 읽어서 모터 루프에 피드백 | 엔코더 값이 모터에 반영되는 시간 | 1ms 간격이 흔들리면 제어 주기가 불안정해짐 |
 | IMU | 5ms 마다 가속도, 각속도 측정 | 측정 시점부터 자세가 반영되기까지 걸리는 시간 | 측정 시간이 5ms가 아닌 4~6ms로 흔들리며 위치 추정 오차 증가 |
 | 2D 라이다 | 100ms마다 장애물 스캔 | 장애물 감지 시점부터 모터가 감속하는데 걸리는 시간 | 스캔 주기가 흔들리며 장애물의 위치, 속도 갱신이 불규칙해짐 |
+
+## 2. 원격 접속(SSH)과 센서 장치 경로 고정
+
+1. localhost로 접속
+
+```console
+pa33@pa33-Legion-Pro-5-16IAX10:~$ ssh pa33@localhost
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.8.0-138-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+189 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+143 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+New release '24.04.4 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Tue Aug 25 14:14:47 2026 from 127.0.0.1
+pa33@pa33-Legion-Pro-5-16IAX10:~$ who
+pa33     tty2         2026-08-25 00:09 (tty2)
+pa33     pts/3        2026-08-25 14:14 (127.0.0.1)
+pa33     pts/4        2026-08-25 14:15 (127.0.0.1)
+pa33@pa33-Legion-Pro-5-16IAX10:~$ echo $SSH_CONNECTION
+127.0.0.1 44232 127.0.0.1 22
+
+```
+=======
